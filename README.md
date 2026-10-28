@@ -118,13 +118,10 @@ uv run pytest
 
 ## 8. Questions ouvertes et observations
 
-1. **Droits PostgreSQL sur Aiven (schéma public) :** La connexion réseau et l'authentification avec `tce_backend` fonctionnent parfaitement en SSL. Cependant, sur PostgreSQL 15+ (Aiven), un utilisateur applicatif non-administrateur ne dispose pas du droit `CREATE` sur le schéma `public` par défaut (`permission denied for schema public`). Le propriétaire du projet (ou l'administrateur `avnadmin`) doit exécuter la commande suivante (par exemple dans le Query Editor de la console Aiven) :
-   ```sql
-   GRANT ALL ON SCHEMA public TO tce_backend;
-   ```
-   Dès cette commande exécutée, `tce db init` et l'ensemble du pipeline peuvent créer et alimenter les tables sur Aiven. En attendant, tout le code et les tests sont validés à 100% sur des mocks et des fixtures réelles.
-2. **Confirmation des champs API Hacker News (Algolia) :** Lors de l'appel réel de la tâche 7, la structure Algolia a confirmé la présence exacte des champs attendus : `objectID`, `title`, `url` (pouvant être `None` pour Ask HN, correctement replié sur `https://news.ycombinator.com/item?id=<objectID>`), `points`, `num_comments`, `created_at_i`, et `story_text`.
-3. **Confirmation des champs API arXiv :** L'appel réel de la tâche 6 a validé le flux Atom XML (`atom:id`, `atom:title`, `atom:summary`, `atom:published`), le nettoyage des versions d'identifiant et le respect du délai de 3 secondes par requête.
-4. **Flux RSS réels :** Deux flux exemples sont configurés dans `config/sources.yaml` (Hugging Face Blog et OpenAI News). Le propriétaire fournira sa liste de 15 à 30 flux de veille.
-5. **Seuil de rattachement topic :** Fixé à `0.5` dans `settings.py` (modifiable via la variable de configuration). À évaluer après une semaine d'accumulation d'items réels.
-6. **Rétention des données :** Sur le plan gratuit Aiven limité à 1 Go, une politique de purge des items de plus de 90 jours pourra être mise en place en V1.
+1. **Connexion et permissions Aiven :** La configuration réseau, le canal SSL obligatoire et les permissions sur le schéma `public` sont pleinement validés. Les 6 tables, les 52 entités initiales et les 8 topics d'exemple sont initialisés et synchronisés.
+2. **Durée mesurée de `tce run-all` en production :** L'exécution complète du pipeline en conditions réelles (collecte simultanée de 30 posts Hacker News, 500 prépublications arXiv avec respect du rate limiting de 3 secondes, et 2 223 articles RSS Hugging Face / OpenAI, suivie de l'enrichissement YAKE, de l'attachement aux topics et du calcul des snapshots) a été mesurée à **287,33 secondes** (~4,8 minutes).
+3. **Confirmation des champs API Hacker News (Algolia) :** Lors de l'appel réel de la tâche 7, la structure Algolia a confirmé la présence exacte des champs attendus : `objectID`, `title`, `url` (pouvant être `None` pour Ask HN, correctement replié sur `https://news.ycombinator.com/item?id=<objectID>`), `points`, `num_comments`, `created_at_i`, et `story_text`.
+4. **Confirmation des champs API arXiv :** L'appel réel de la tâche 6 a validé le flux Atom XML (`atom:id`, `atom:title`, `atom:summary`, `atom:published`), le nettoyage des versions d'identifiant et le respect du délai de 3 secondes par requête.
+5. **Flux RSS réels :** Deux flux exemples sont configurés dans `config/sources.yaml` (Hugging Face Blog et OpenAI News). Le propriétaire fournira sa liste de 15 à 30 flux de veille.
+6. **Seuil de rattachement topic :** Fixé à `0.5` dans `settings.py` (modifiable via la variable de configuration). Après ingestion réelle de 2 752 items, 141 rattachements item-topic pertinents ont été générés.
+7. **Rétention des données :** Sur le plan gratuit Aiven limité à 1 Go, une politique de purge des items de plus de 90 jours pourra être mise en place en V1.

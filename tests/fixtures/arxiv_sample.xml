@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/2in3f05cm+zOBR9InQHupkVbMWA</id>
+  <title>arXiv Query: search_query=cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.CV&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-10-28T10:41:54Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=cat:cs.AI+OR+(cat:cs.CL+OR+(cat:cs.LG+OR+cat:cs.CV))&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>618122</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37668v1</id>
+    <title>Honeycomb-Surfels: Compact Hexagonal Primitives for Efficient Scene Rendering and Reconstruction</title>
+    <updated>2026-10-27T17:59:59Z</updated>
+    <link href="https://arxiv.org/abs/2610.37668v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37668v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Novel view synthesis and 3D reconstruction have advanced rapidly with radiance fields and splatting, yet their memory and computational demands limit their use in resource-constrained settings. We introduce Hexels: novel planar hexagonal surface elements with a first-order spatial color field for efficient 3D scene and 2D image representation. Hexels exploit locally planar regions with smoothly varying appearance using fewer, larger primitives. Their hexagonal support provides an area- and boundary-efficient domain, while the local color field captures appearance variation within each primitive. Across 34 scenes, Hexels improve PSNR over memory-matched 2DGS by 4.53-7.38 dB across datasets while requiring lower training VRAM. We further ablate Hexels by showing that per primitive, Hexels outperform 2DGS by upto 4.74 dB while using lower training VRAM and having 2.31 times faster FPS. Even in unconstrained settings, Hexels offers complementary quality-memory trade-offs. For efficient 3D surface reconstruction, Hexels reduce error by 28.9% compared with memory-matched 2DGS across 15 DTU scans. On 6 Tanks and Temples surface scenes, Hexels achieves the highest mean F1 among compared methods (34.38%, versus 31.72% for 2DGS). We further also show that Hexels, as a general primitive, improves 2D image representation over Image-GS. Hexels push the Pareto frontier on the quality-efficiency trade-off of surface-aligned primitives.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T17:59:59Z</published>
+    <arxiv:comment>Project page at https://honeycomb-surfels.github.io/</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Prakhar Kaushik</name>
+    </author>
+    <author>
+      <name>Soumava Paul</name>
+    </author>
+    <author>
+      <name>Alan Yuille</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37666v1</id>
+    <title>ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning</title>
+    <updated>2026-10-27T17:59:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.37666v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37666v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Vision-Language-Action (VLA) models have made substantial progress in robotic manipulation, but their generalization remains constrained by the diversity and coverage of action-labeled robot demonstrations. Human videos provide much broader behavioral and environmental experience, while learning from them faces a fundamental trade-off between scalable data and explicit action grounding. We introduce ThinkWorld, a VLA learning framework that grounds action reasoning in world dynamics and strengthens it through reinforcement learning with world imagination. ThinkWorld represents each action thought as a Chain-of-Dynamics (CoD), a sequence of discrete motion tokens that captures the intermediate dynamics connecting the current world to a future state and serves as a common action representation across embodiments. We first initialize CoD with action-labeled demonstrations, then predict the future induced by each CoD and reinforce those whose predictions better match the observed outcome. This enables videos without action annotations to provide direct supervision from observed state transitions, allowing human and robot experience to refine the same reasoning space. Experiments in simulation and on real robots demonstrate effective human-to-robot transfer and strong generalization to unseen tasks and environments.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T17:59:52Z</published>
+    <arxiv:comment>Project Page: https://thinkworld-project.github.io/</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Chaehyun Kim</name>
+    </author>
+    <author>
+      <name>Chi-Pin Huang</name>
+    </author>
+    <author>
+      <name>Jisoo Kim</name>
+    </author>
+    <author>
+      <name>Min-Hung Chen</name>
+    </author>
+    <author>
+      <name>Yu-Chiang Frank Wang</name>
+    </author>
+    <author>
+      <name>Seungryong Kim</name>
+    </author>
+    <author>
+      <name>Fu-En Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37662v1</id>
+    <title>Can Discrete Tokens Serve as Semantically Lossless Representations of Visual Signals?</title>
+    <updated>2026-10-27T17:59:22Z</updated>
+    <link href="https://arxiv.org/abs/2610.37662v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37662v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Discrete visual tokens represent vision in a discrete form analogous to language, offering a native interface for multimodal modeling under a shared next-token prediction objective. However, quantization error is widely assumed to cause unavoidable semantic loss, fundamentally limiting the semantic fidelity of discrete visual tokens and positioning continuous visual representations as an intrinsic upper bound. Using multimodal understanding as a proxy for semantic fidelity, we revisit this assumption and find quantization error unreliable, as discrete representations with substantially larger errors can achieve better understanding. Instead, the effective bit budget of discrete indices emerges as a key determinant of downstream performance. However, existing quantizers eventually saturate as additional codebooks contribute progressively less semantic information. As one approach to alleviating this saturation, we introduce Factorized Vector Quantization, which quantizes complementary, fixed-dimensional views of the visual feature with symmetric parallel codebooks. It continues to improve at larger bit budgets, ultimately matching continuous visual representations in multimodal understanding. Trained on industrial-scale multimodal data, our model achieves state-of-the-art performance among discrete-representation models, outperforming UniAR and Emu3-Chat by 22.8% and 59.2%, respectively, on a nine-metric average. To our knowledge, it is also the first discrete-representation model competitive with strong continuous-representation models such as Qwen3-VL, including on fine-grained OCR tasks. We further identify the key principles and a practical recipe enabling this competitiveness. These results and insights support the potential of discrete visual representations to underpin large-scale native multimodal foundation models. Code and models are available at https://github.com/hustvl/FVQ</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T17:59:22Z</published>
+    <arxiv:comment>Project page: https://doctor-james.github.io/FVQ-Page/</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jialv Zou</name>
+    </author>
+    <author>
+      <name>Xiaotong Li</name>
+    </author>
+    <author>
+      <name>Zhengrong Yue</name>
+    </author>
+    <author>
+      <name>Xu Huang</name>
+    </author>
+    <author>
+      <name>Yaxin Luo</name>
+    </author>
+    <author>
+      <name>Wenhao Yan</name>
+    </author>
+    <author>
+      <name>Haodong Li</name>
+    </author>
+    <author>
+      <name>Wenyu Liu</name>
+    </author>
+    <author>
+      <name>Xinggang Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37658v1</id>
+    <title>When Should We Intervene at Test Time?</title>
+    <updated>2026-10-27T17:58:53Z</updated>
+    <link href="https://arxiv.org/abs/2610.37658v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37658v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Test-time adaptation helps a deployed model respond to changing inputs, but the same intervention can rescue one batch and damage the next. Updating normalization statistics, for example, can improve corrupted images yet fail when a batch contains mostly one class. Average accuracy hides these failures and cannot tell a model when to use an intervention. Target labels can guide this decision, but they are scarce and some choices are already clear. We introduce PORTAL, a controller that chooses when to deploy an intervention, which inputs to label, and when to stop querying. Each available prediction rule is a candidate, and its predictions are fixed before current feedback arrives. Every acquired label therefore evaluates all candidates on the same input. PORTAL combines these shared comparisons and directs queries toward candidates that can still overtake the current leader. It stops when the remaining labels cannot change the choice or when the possible accuracy gain no longer justifies another query. Our analysis links the required feedback to accuracy gaps and shared mistakes, explaining why some choices need much less evidence. Experiments show that this control turns an intervention that loses accuracy overall into a useful choice on selected batches. It prevents severe failures caused by changes in arrival order and preserves gains across complete corruption streams. When a fixed rule already works well, PORTAL uses little feedback to retain its performance. Periodic label checks reveal when past evidence needs refreshing and help the controller recover as conditions change. The acquired labels also train stronger candidates for future batches, and selection brings nearly all of their accuracy gains into deployment. The same feedback therefore improves both the choice made now and the predictions available to later batches.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T17:58:53Z</published>
+    <arxiv:comment>79 pages; preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jiahao Zhang</name>
+    </author>
+    <author>
+      <name>Xinling Wen</name>
+    </author>
+    <author>
+      <name>Liangliang Li</name>
+    </author>
+    <author>
+      <name>Yu Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.37657v1</id>
+    <title>Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness</title>
+    <updated>2026-10-27T17:58:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.37657v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.37657v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce Heads of Security (HoS), a prompt injection defense that enforces instruction-data separation via a small set of learned per-head attention gates. HoS learns how each head should redistribute attention between trusted and untrusted tokens, enabling models to reason over untrusted content without following injected instructions. We evaluate HoS on Llama-3.3-70B-Instruct and GPT-OSS-20B. We compare it against SecAlign++, a state-of-the-art finetuning-based defense, and ASIDE, a defense that, like ours, builds instruction-data separation into the model architecture. We show that HoS offers greater robustness to adaptive attacks, better performance on standard utility benchmarks, and matches top performance on standard agentic prompt injection benchmarks. More specifically, the black-box RL-Hammer attack reaches 97% ASR against GPT-OSS-20B and 85% against SecAlign, but only 10% against HoS. Claudini, a state-of-the-art white-box attack, strengthened against HoS through autoresearch, requires 3 times more FLOPs to reach the same ASR on HoS as it does on GPT-OSS-20B or SecAlign. HoS preserves base-model utility across standard multiple-choice benchmarks and prompting setups, whereas SecAlign and ASIDE degrade in few-shot settings. On agentic benchmarks with static attacks, HoS and SecAlign perform similarly and substantially improve the security-utility trade-off over the base model. ASIDE struggles with tool use, achieving only 10% utility. These results show that prompt injection robustness can be achieved and improved through targeted attention interventions.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-27T17:58:52Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Igor Shilov</name>
+    </author>
+    <author>
+      <name>Xiaoxue Yang</name>
+    </author>
+    <author>
+      <name>Alexander Panfilov</name>
+    </author>
+    <author>
+      <name>Evgenii Kortukov</name>
+    </author>
+    <author>
+      <name>Matthieu Meeus</name>
+    </author>
+    <author>
+      <name>Peter Romov</name>
+    </author>
+    <author>
+      <name>Wojciech Samek</name>
+    </author>
+    <author>
+      <name>Jonas Geiping</name>
+    </author>
+    <author>
+      <name>Yves-Alexandre de Montjoye</name>
+    </author>
+  </entry>
+</feed>

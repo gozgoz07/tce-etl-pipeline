@@ -1,0 +1,91 @@
+# TCE V0 - Configuration des topics
+# Base initiale de 8 topics à relire par le propriétaire du projet.
+
+- name: "Agents de code"
+  category: "tech"
+  keywords:
+    - "coding agent"
+    - "code generation"
+    - "agentic coding"
+    - "autonomous developer"
+  entities:
+    - "Claude Code"
+    - "Cursor"
+    - "GitHub Copilot"
+
+- name: "Modèles de raisonnement"
+  category: "ai"
+  keywords:
+    - "reasoning model"
+    - "chain of thought"
+    - "inference compute"
+  entities:
+    - "OpenAI"
+    - "Anthropic"
+    - "Chain of Thought"
+
+- name: "Architectures MoE"
+  category: "ai"
+  keywords:
+    - "mixture of experts"
+    - "sparse model"
+    - "expert routing"
+  entities:
+    - "Mixture of Experts"
+    - "Mistral AI"
+    - "DeepSeek"
+
+- name: "Pipelines RAG et recherche"
+  category: "tech"
+  keywords:
+    - "retrieval augmented"
+    - "vector search"
+    - "hybrid search"
+  entities:
+    - "Retrieval-Augmented Generation"
+    - "LangChain"
+    - "LlamaIndex"
+
+- name: "Optimisation et alignement"
+  category: "ai"
+  keywords:
+    - "preference optimization"
+    - "instruction tuning"
+    - "human feedback"
+  entities:
+    - "Direct Preference Optimization"
+    - "Reinforcement Learning from Human Feedback"
+    - "Fine-Tuning"
+
+- name: "Inférence et quantification"
+  category: "systems"
+  keywords:
+    - "speculative decoding"
+    - "quantization"
+    - "fast inference"
+  entities:
+    - "Quantization"
+    - "vLLM"
+    - "Speculative Decoding"
+
+- name: "Modèles Vision-Langage"
+  category: "multimodal"
+  keywords:
+    - "multimodal model"
+    - "vision language"
+    - "image understanding"
+  entities:
+    - "Vision-Language Model"
+    - "DALL-E 3"
+    - "Stable Diffusion"
+
+- name: "Frameworks d'entraînement"
+  category: "systems"
+  keywords:
+    - "distributed training"
+    - "gradient accumulation"
+    - "model parallelism"
+  entities:
+    - "PyTorch"
+    - "JAX"
+    - "Transformers"

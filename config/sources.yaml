@@ -1,0 +1,26 @@
+# TCE V0 - Configuration des sources
+# Base initiale à relire et adapter par le propriétaire du projet.
+
+arxiv:
+  base_url: "https://export.arxiv.org/api/query"
+  search_query: "cat:cs.AI OR cat:cs.CL OR cat:cs.LG OR cat:cs.CV"
+  sort_by: "submittedDate"
+  sort_order: "descending"
+  max_results_per_page: 100
+  max_pages: 5
+  cutoff_hours: 48
+  rate_limit_delay_seconds: 3.0
+
+hackernews:
+  base_url: "https://hn.algolia.com/api/v1/search_by_date"
+  tags: "story"
+  hits_per_page: 100
+  max_pages: 5
+  cutoff_hours: 48
+  rate_limit_delay_seconds: 1.0
+
+rss:
+  - name: "Hugging Face Blog"
+    url: "https://huggingface.co/blog/feed.xml"
+  - name: "OpenAI News"
+    url: "https://openai.com/news/rss.xml"

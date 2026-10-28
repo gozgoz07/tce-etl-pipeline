@@ -1,0 +1,210 @@
+# TCE V0 - Dictionnaire initial d'entités et d'alias
+# Base initiale à relire par le propriétaire du projet.
+
+- canonical_name: OpenAI
+  type: ORG
+  aliases: ["OpenAI", "Open AI"]
+
+- canonical_name: Anthropic
+  type: ORG
+  aliases: ["Anthropic"]
+
+- canonical_name: Google DeepMind
+  type: ORG
+  aliases: ["Google DeepMind", "DeepMind"]
+
+- canonical_name: Meta AI
+  type: ORG
+  aliases: ["Meta AI", "FAIR"]
+
+- canonical_name: Mistral AI
+  type: ORG
+  aliases: ["Mistral AI", "Mistral"]
+
+- canonical_name: Hugging Face
+  type: ORG
+  aliases: ["Hugging Face", "HuggingFace"]
+
+- canonical_name: Microsoft
+  type: ORG
+  aliases: ["Microsoft", "MSFT"]
+
+- canonical_name: NVIDIA
+  type: ORG
+  aliases: ["NVIDIA", "Nvidia"]
+
+- canonical_name: Cohere
+  type: ORG
+  aliases: ["Cohere"]
+
+- canonical_name: Stability AI
+  type: ORG
+  aliases: ["Stability AI"]
+
+- canonical_name: xAI
+  type: ORG
+  aliases: ["xAI"]
+
+- canonical_name: Apple
+  type: ORG
+  aliases: ["Apple ML"]
+
+- canonical_name: GPT-4
+  type: MODEL
+  aliases: ["GPT-4", "GPT4", "GPT 4"]
+
+- canonical_name: GPT-5
+  type: MODEL
+  aliases: ["GPT-5", "GPT5", "GPT 5"]
+
+- canonical_name: Claude 3.5 Sonnet
+  type: MODEL
+  aliases: ["Claude 3.5 Sonnet", "Claude 3.5"]
+
+- canonical_name: Claude 3 Opus
+  type: MODEL
+  aliases: ["Claude 3 Opus", "Claude Opus"]
+
+- canonical_name: Llama 3
+  type: MODEL
+  aliases: ["Llama 3", "LLaMA 3", "Llama3"]
+
+- canonical_name: Gemini 1.5 Pro
+  type: MODEL
+  aliases: ["Gemini 1.5 Pro", "Gemini Pro"]
+
+- canonical_name: Mistral Large
+  type: MODEL
+  aliases: ["Mistral Large"]
+
+- canonical_name: DeepSeek
+  type: MODEL
+  aliases: ["DeepSeek-V2", "DeepSeek V2", "DeepSeek"]
+
+- canonical_name: Qwen 2.5
+  type: MODEL
+  aliases: ["Qwen 2.5", "Qwen2.5"]
+
+- canonical_name: DALL-E 3
+  type: MODEL
+  aliases: ["DALL-E 3", "DALLE 3", "DALL-E"]
+
+- canonical_name: Stable Diffusion
+  type: MODEL
+  aliases: ["Stable Diffusion", "SDXL"]
+
+- canonical_name: Whisper
+  type: MODEL
+  aliases: ["Whisper"]
+
+- canonical_name: ChatGPT
+  type: PRODUCT
+  aliases: ["ChatGPT", "Chat GPT"]
+
+- canonical_name: Claude Code
+  type: PRODUCT
+  aliases: ["Claude Code"]
+
+- canonical_name: GitHub Copilot
+  type: PRODUCT
+  aliases: ["GitHub Copilot", "Copilot"]
+
+- canonical_name: Cursor
+  type: PRODUCT
+  aliases: ["Cursor"]
+
+- canonical_name: Perplexity
+  type: PRODUCT
+  aliases: ["Perplexity", "Perplexity AI"]
+
+- canonical_name: vLLM
+  type: PRODUCT
+  aliases: ["vLLM"]
+
+- canonical_name: Ollama
+  type: PRODUCT
+  aliases: ["Ollama"]
+
+- canonical_name: LangSmith
+  type: PRODUCT
+  aliases: ["LangSmith"]
+
+- canonical_name: PyTorch
+  type: LIBRARY
+  aliases: ["PyTorch", "Torch"]
+
+- canonical_name: TensorFlow
+  type: LIBRARY
+  aliases: ["TensorFlow"]
+
+- canonical_name: Transformers
+  type: LIBRARY
+  aliases: ["Transformers", "Hugging Face Transformers"]
+
+- canonical_name: LangChain
+  type: LIBRARY
+  aliases: ["LangChain"]
+
+- canonical_name: LlamaIndex
+  type: LIBRARY
+  aliases: ["LlamaIndex", "Llama-Index"]
+
+- canonical_name: JAX
+  type: LIBRARY
+  aliases: ["JAX"]
+
+- canonical_name: Keras
+  type: LIBRARY
+  aliases: ["Keras"]
+
+- canonical_name: scikit-learn
+  type: LIBRARY
+  aliases: ["scikit-learn", "sklearn"]
+
+- canonical_name: Polars
+  type: LIBRARY
+  aliases: ["Polars"]
+
+- canonical_name: Axolotl
+  type: LIBRARY
+  aliases: ["Axolotl"]
+
+- canonical_name: Retrieval-Augmented Generation
+  type: TECHNIQUE
+  aliases: ["Retrieval-Augmented Generation", "RAG"]
+
+- canonical_name: Reinforcement Learning from Human Feedback
+  type: TECHNIQUE
+  aliases: ["Reinforcement Learning from Human Feedback", "RLHF"]
+
+- canonical_name: Direct Preference Optimization
+  type: TECHNIQUE
+  aliases: ["Direct Preference Optimization", "DPO"]
+
+- canonical_name: Mixture of Experts
+  type: TECHNIQUE
+  aliases: ["Mixture of Experts", "MoE"]
+
+- canonical_name: Low-Rank Adaptation
+  type: TECHNIQUE
+  aliases: ["Low-Rank Adaptation", "LoRA"]
+
+- canonical_name: Quantization
+  type: TECHNIQUE
+  aliases: ["Quantization", "4-bit quantization", "8-bit quantization"]
+
+- canonical_name: Chain of Thought
+  type: TECHNIQUE
+  aliases: ["Chain of Thought", "CoT"]
+
+- canonical_name: Fine-Tuning
+  type: TECHNIQUE
+  aliases: ["Fine-Tuning", "Fine-tuning", "Finetuning"]
+
+- canonical_name: Vision-Language Model
+  type: TECHNIQUE
+  aliases: ["Vision-Language Model", "VLM"]
+
+- canonical_name: Speculative Decoding
+  type: TECHNIQUE
+  aliases: ["Speculative Decoding"]

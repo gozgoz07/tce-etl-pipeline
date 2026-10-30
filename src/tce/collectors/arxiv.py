@@ -107,6 +107,15 @@ def fetch_arxiv(
     )
 
     try:
+        # Best-effort retrieval of Hugging Face Daily Papers engagement metrics
+        hf_metrics: dict[str, tuple[int, int]] = {}
+        try:
+            from tce.collectors.huggingface import fetch_hf_daily_papers_metrics
+
+            hf_metrics = fetch_hf_daily_papers_metrics(client=http_client)
+        except Exception as e:
+            logger.warning("Could not fetch Hugging Face metrics for arXiv: %s", e)
+
         for page in range(max_pages):
             start = page * max_results_per_page
             params = {
@@ -148,6 +157,10 @@ def fetch_arxiv(
                 if item.published_at < cutoff_dt:
                     reached_cutoff = True
                     break
+                if item.source_item_id in hf_metrics:
+                    upvotes, comments = hf_metrics[item.source_item_id]
+                    item.points = upvotes
+                    item.comments = comments
                 all_items.append(item)
 
             if reached_cutoff:

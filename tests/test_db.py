@@ -17,20 +17,21 @@ def test_init_db_mock():
     with patch("tce.db.get_connection") as mock_get_conn:
         mock_get_conn.return_value.__enter__.return_value = mock_conn
 
-        # Call once
+        # Call once: executes all SQL migration files (001_init.sql, 002_add_hf_source.sql)
         init_db("postgresql://dummy:dummy@localhost/dummy")
-        assert mock_cursor.execute.call_count == 1
-        executed_sql = mock_cursor.execute.call_args[0][0]
-        assert "CREATE TABLE IF NOT EXISTS entities" in executed_sql
-        assert "CREATE TABLE IF NOT EXISTS items" in executed_sql
-        assert "CREATE TABLE IF NOT EXISTS topics" in executed_sql
-        assert "CREATE TABLE IF NOT EXISTS item_topics" in executed_sql
-        assert "CREATE TABLE IF NOT EXISTS topic_snapshots" in executed_sql
-        assert "CREATE TABLE IF NOT EXISTS scopes" in executed_sql
+        num_sql_files = len(list(settings.SQL_DIR.glob("*.sql")))
+        assert mock_cursor.execute.call_count == num_sql_files
+        all_executed_sql = " ".join(call[0][0] for call in mock_cursor.execute.call_args_list)
+        assert "CREATE TABLE IF NOT EXISTS entities" in all_executed_sql
+        assert "CREATE TABLE IF NOT EXISTS items" in all_executed_sql
+        assert "CREATE TABLE IF NOT EXISTS topics" in all_executed_sql
+        assert "CREATE TABLE IF NOT EXISTS item_topics" in all_executed_sql
+        assert "CREATE TABLE IF NOT EXISTS topic_snapshots" in all_executed_sql
+        assert "CREATE TABLE IF NOT EXISTS scopes" in all_executed_sql
 
         # Call second time (idempotence verification)
         init_db("postgresql://dummy:dummy@localhost/dummy")
-        assert mock_cursor.execute.call_count == 2
+        assert mock_cursor.execute.call_count == num_sql_files * 2
 
 
 def test_get_connection_rollback_on_error():

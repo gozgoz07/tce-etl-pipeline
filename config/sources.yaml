@@ -24,3 +24,9 @@ rss:
     url: "https://huggingface.co/blog/feed.xml"
   - name: "OpenAI News"
     url: "https://openai.com/news/rss.xml"
+
+huggingface:
+  models_url: "https://huggingface.co/api/models"
+  daily_papers_url: "https://huggingface.co/api/daily_papers"
+  models_limit: 50
+  sort: "trendingScore"

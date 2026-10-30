@@ -58,7 +58,7 @@ def collect(
         "all",
         "--source",
         "-s",
-        help="Source to collect: hn, arxiv, rss, or all",
+        help="Source to collect: hn, arxiv, rss, hf, or all",
     ),
 ) -> None:
     """Collect, enrich, and store items from sources."""

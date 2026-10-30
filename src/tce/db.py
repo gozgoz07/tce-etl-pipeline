@@ -35,13 +35,18 @@ def get_connection(
 
 
 def init_db(database_url: Optional[str] = None) -> None:
-    """Initialize database tables using sql/001_init.sql."""
-    init_sql_path = settings.SQL_DIR / "001_init.sql"
-    if not init_sql_path.exists():
-        raise FileNotFoundError(f"Schema file not found at {init_sql_path}")
+    """Initialize database schema and apply migrations from sql/*.sql in order."""
+    if not settings.SQL_DIR.exists():
+        raise FileNotFoundError(f"SQL directory not found at {settings.SQL_DIR}")
 
-    sql_content = init_sql_path.read_text(encoding="utf-8")
+    sql_files = sorted(settings.SQL_DIR.glob("*.sql"))
+    if not sql_files:
+        raise FileNotFoundError(f"No SQL files found in {settings.SQL_DIR}")
+
     with get_connection(database_url) as conn:
         with conn.cursor() as cur:
-            cur.execute(sql_content)
-    logger.info("Database schema initialized successfully.")
+            for sql_file in sql_files:
+                logger.info("Applying SQL migration: %s", sql_file.name)
+                content = sql_file.read_text(encoding="utf-8")
+                cur.execute(content)
+    logger.info("Database schema and migrations initialized successfully.")

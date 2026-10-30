@@ -7,6 +7,7 @@ import psycopg
 from tce.collectors.arxiv import fetch_arxiv
 from tce.collectors.base import RawItem, store_raw_items
 from tce.collectors.hackernews import build_filter_predicate, fetch_hackernews
+from tce.collectors.huggingface import fetch_hf_models
 from tce.collectors.rss import fetch_all_rss_feeds
 from tce.enrich.entities import EntityMatcher
 from tce.enrich.pipeline import enrich_text
@@ -18,13 +19,13 @@ def collect_and_store(
     conn: psycopg.Connection,
     source: str = "all",
 ) -> tuple[int, int, int, bool]:
-    """Collect from specified source ('hn', 'arxiv', 'rss', or 'all'), enrich and store in DB.
+    """Collect from specified source ('hn', 'arxiv', 'rss', 'hf', or 'all'), enrich and store in DB.
 
     Returns:
         tuple (total_seen, total_new, total_updated, had_errors)
     """
     clean_source = source.strip().lower()
-    valid_sources = {"hn", "arxiv", "rss", "all"}
+    valid_sources = {"hn", "arxiv", "rss", "hf", "all"}
     if clean_source not in valid_sources:
         raise ValueError(f"Invalid source: '{source}'. Must be one of {valid_sources}")
 
@@ -79,6 +80,17 @@ def collect_and_store(
             logger.info("Collected %d RSS items.", len(rss_items))
         except Exception as e:
             logger.error("RSS collection failed: %s", e)
+            had_errors = True
+
+    # 4. Hugging Face
+    if clean_source in ("hf", "all"):
+        try:
+            logger.info("Starting Hugging Face models collection...")
+            hf_items = fetch_hf_models()
+            items_to_store.extend(hf_items)
+            logger.info("Collected %d Hugging Face model items.", len(hf_items))
+        except Exception as e:
+            logger.error("Hugging Face collection failed: %s", e)
             had_errors = True
 
     # Common enrichment function

@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS entities (
 
 CREATE TABLE IF NOT EXISTS items (
   item_id        BIGSERIAL PRIMARY KEY,
-  source         TEXT NOT NULL CHECK (source IN ('hn','arxiv','rss')),
+  source         TEXT NOT NULL CHECK (source IN ('hn','arxiv','rss','hf')),
   source_item_id TEXT NOT NULL,
   url            TEXT NOT NULL,
   url_hash       TEXT NOT NULL UNIQUE,

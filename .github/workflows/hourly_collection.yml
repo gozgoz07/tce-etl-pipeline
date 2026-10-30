@@ -1,4 +1,4 @@
-name: Hourly Collection (HN & RSS)
+name: Hourly Collection (HN, RSS & HF)
 
 on:
   schedule:
@@ -30,3 +30,8 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: uv run tce collect --source rss
+
+      - name: Collect Hugging Face Models
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: uv run tce collect --source hf
